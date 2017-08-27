@@ -1,0 +1,6 @@
+{
+    "shell_cmd": ["scriptorium", "build"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+    "shell": "true"
+}

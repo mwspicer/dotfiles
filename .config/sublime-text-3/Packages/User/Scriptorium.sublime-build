@@ -1,0 +1,5 @@
+{
+    "shell_cmd": ["scriptorium", "build"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "text.html.markdown.multimarkdown",
+}
