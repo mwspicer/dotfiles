@@ -282,6 +282,8 @@ exec_always xrandr | grep 'HDMI1 disconnected' && xrandr --output eDP1 --output 
 #xrandr --output HDMI1 --right-of eDP1 --mode 1680x1050
 #pactl set-card-profile 0 output:hdmi-stereo
 #pactl set-card-profile 0 output:analog-stereo
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
 
 # Appearance mods
 # exec --no-startup-id gnome-settings-daemon
