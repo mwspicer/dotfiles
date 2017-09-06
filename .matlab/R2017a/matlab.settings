@@ -264,6 +264,9 @@
             </key>
             <key name="History">
                 <string minArraySize="0" maxArraySize="500">
+                    <value><![CDATA[/home/matt/Documents/VT/Research/CAN_NodeIdentification]]></value>
+                    <value><![CDATA[/home/matt/Documents/VT/Research/CAN_NodeIdentification/gen_data_files]]></value>
+                    <value><![CDATA[/]]></value>
                 </string>
             </key>
             <key name="HistorySize">
@@ -304,8 +307,8 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[39]]></value>
-                        <value><![CDATA[38]]></value>
+                        <value><![CDATA[63]]></value>
+                        <value><![CDATA[63]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
