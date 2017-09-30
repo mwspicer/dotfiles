@@ -1,0 +1,45 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Monokai",
+    "python.pythonPath": "python3",
+
+    "[latex]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "[plaintext]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "[markdown]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "files.associations":
+    {
+        "*.mmd": "latex"
+    },
+    "window.zoomLevel": 1,
+
+    "cSpell.userWords":
+    [
+        "Autoregressive",
+        "Bayesion",
+        "microcontrollers"
+    ],
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "latexmk",
+            "args": [
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        }
+    ],
+    "git.confirmSync": false
+}
