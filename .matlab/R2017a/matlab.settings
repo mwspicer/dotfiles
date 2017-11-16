@@ -2,6 +2,7 @@
 <settings name="matlab" xmlns="urn:mathworks.matlab.settings" xsi:schemaLocation="urn:mathworks.matlab.settings settings.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <key name="DeleteFilesPermanently">
         <bool>
+            <value>1</value>
         </bool>
     </key>
     <key name="G11nLanguagePref">
@@ -266,6 +267,11 @@
                 <string minArraySize="0" maxArraySize="500">
                     <value><![CDATA[/media/matt/shared/VT/Research/CAN_NodeIdentification]]></value>
                     <value><![CDATA[/home/matt/Documents/VT/Research/CAN_NodeIdentification]]></value>
+                    <value><![CDATA[/media/matt/windows/Users/mwspi/Documents/VT/Classes/Machine Learning/Stanford Online Course/ex4_NeuralNet/ex4]]></value>
+                    <value><![CDATA[/media/matt/windows/Users/mwspi/Documents/VT/Classes/Machine Learning/Stanford Online Course/ex4_NeuralNet]]></value>
+                    <value><![CDATA[/media/matt/windows/Users/mwspi/Documents/VT/Classes/Machine Learning/Stanford Online Course]]></value>
+                    <value><![CDATA[/media/matt/windows/Users/mwspi/Documents/VT/Classes/Machine Learning]]></value>
+                    <value><![CDATA[/media/matt/shared/VT/Research/Thesis/Paper]]></value>
                     <value><![CDATA[/home/matt/Documents/VT/Research/CAN_NodeIdentification/gen_data_files]]></value>
                     <value><![CDATA[/]]></value>
                 </string>
@@ -308,8 +314,8 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[323]]></value>
-                        <value><![CDATA[43]]></value>
+                        <value><![CDATA[266]]></value>
+                        <value><![CDATA[53]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>

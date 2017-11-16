@@ -16,6 +16,10 @@
     {
         "editor.wordWrap": "on"
     },
+    "[biblatex]":
+    {
+        "editor.wordWrap": "on"
+    },
     "files.associations":
     {
         "*.mmd": "latex"
@@ -26,7 +30,13 @@
     [
         "Autoregressive",
         "Bayesion",
+        "covariance",
         "microcontrollers"
+    ],
+    "cSpell.ignoreRegExpList":
+    [
+        "\\\\\\w*(\\[.*?\\])?(\\{.*?\\})?",
+        "\\$.+?\\$"
     ],
     "latex-workshop.latex.toolchain": [
         {
@@ -41,5 +51,8 @@
             ]
         }
     ],
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "matlab.mlintpath": "/usr/local/MATLAB/R2017a/bin/glnxa64/mlint",
+    "cSpell.language": "en,en-US",
+    "workbench.panel.location": "bottom"
 }
