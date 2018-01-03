@@ -1,5 +1,5 @@
 #MATLAB Preferences
-#Thu Nov 09 12:50:14 EST 2017
+#Thu Dec 07 10:51:27 EST 2017
 Editor.VariableHighlighting.Color=C-1
 CommandHistoryShowExecutionTime=Bfalse
 EditorMRUSize=I8
@@ -96,7 +96,7 @@ ColorsMLintAutoFixBackground=C-986896
 EditorAutoReloadFiles=Btrue
 DelimiterOptionsMoving=Btrue
 DelimiterOptionsMovingMisMatchType=I5
-DocumentsDetailViewerRatio=J4635206368294282529
+DocumentsDetailViewerRatio=J4635221793211767202
 DocumentsDetailViewerCollapsed=Bfalse
 ColorsUseMLintAutoFixBackground=Btrue
 ReplaceText=S

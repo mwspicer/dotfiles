@@ -140,6 +140,7 @@ bindsym $mod+0 workspace $workspace10
 
 
 # default workspaces
+# Find window class name by running xprop and clicking on the window 
 assign [class="Spotify"] $workspace4
 for_window [class="Spotify"] move to workspace $workspace4
 assign [class="Firefox"] $workspace1
@@ -250,7 +251,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
 
 # Enable screenshot when pressing the print screen key
-bindsym Print exec scrot -b -d 1 '%Y:%m:%d:%H:%M:%S.png'  -e 'mv $f ~/Pictures/'
+bindsym Print exec gnome-screenshot -i #scrot -b -d 1 '%Y:%m:%d:%H:%M:%S.png'  -e 'mv $f ~/Pictures/'
 
 # Run rofi (application launcher)
 bindsym $mod+d exec rofi  -show run -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
@@ -268,4 +269,4 @@ bindsym $mod+Shift+less move workspace to output left
 # Appearance mods
 # exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id compton -f -i 0.8 --inactive-opacity-override
-exec_always --no-startup-id feh --bg-scale /home/matt/Pictures/Senja-Husfjellet_Daniel-Kordan.jpg
+exec_always --no-startup-id feh --bg-scale /home/matt/Pictures/trippy-space.png

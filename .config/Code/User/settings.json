@@ -22,16 +22,24 @@
     },
     "files.associations":
     {
-        "*.mmd": "latex"
+        "*.mmd": "latex",
+        "*.m": "matlab"
     },
     "window.zoomLevel": 1,
-
+    "cSpell.language": "en,en-US",
     "cSpell.userWords":
     [
         "Autoregressive",
-        "Bayesion",
+        "Bayesian",
         "covariance",
-        "microcontrollers"
+        "microcontrollers",
+        "approximators",
+        "autocovariance",
+        "nonconstant",
+        "orthonormal",
+        "overfits",
+        "overfitting",
+        "perceptron"
     ],
     "cSpell.ignoreRegExpList":
     [
@@ -53,6 +61,7 @@
     ],
     "git.confirmSync": false,
     "matlab.mlintpath": "/usr/local/MATLAB/R2017a/bin/glnxa64/mlint",
-    "cSpell.language": "en,en-US",
-    "workbench.panel.location": "bottom"
+    "workbench.panel.location": "bottom",
+    "graphviz-preview.dotPath": "/usr/bin/dot",
+    "workbench.startupEditor": "welcomePage"
 }
