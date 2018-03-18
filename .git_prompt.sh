@@ -1,0 +1,96 @@
+# Everyone needs a little color in their lives
+if [[ -n ${ZSH_VERSION-} ]]; then
+    RED='%F{red}'
+    GREEN='%F{green}'
+    YELLOW='%F{228}'
+    BLUE='%F{blue}'
+    ORANGE='%F{202}'
+    PURPLE='%F{104}'
+    CYAN='%F{51}'
+    WHITE='%F{15}'
+    NIL='%f'
+
+    # Host name styles
+    FULL='%M'
+    SHORT='%m'
+else
+    RED='\[\033[31m\]'
+    GREEN='\[\033[32m\]'
+    YELLOW='\[\033[33m\]'
+    BLUE='\[\033[34m\]'
+    PURPLE='\[\033[35m\]'
+    CYAN='\[\033[36m\]'
+    WHITE='\[\033[37m\]'
+    NIL='\[\033[00m\]'
+
+    # Host name styles
+    FULL='\H'
+    SHORT='\h'
+fi
+
+# System => color/hostname map
+# UC: username color
+# HC: hostname color
+# LC: location/cwd color
+# VC: pyvenv color
+# BC: git branch name color
+# HD: hostname display (full or short)
+# Defaults
+UC=$GREEN
+HC=$YELLOW
+LC=$CYAN
+VC=$BLUE
+BC=$PURPLE
+HD=$FULL
+
+# Prompt function (using PROMPT_COMMAND (?))
+function set_prompt()
+{
+    # If logged in as another user, not gonna have all this firing anyway
+    # so let's just show the host only and be done with it
+    host="${UC}${HD}${NIL}"
+    # Special vim-tab-like shortpath (~/folder/directory/foo => ~/f/d/foo)
+    _pwd=`pwd | sed "s#$HOME#~#"`
+#     if [[ $_pwd == "~" ]]; then
+#         _dirname=$_pwd
+#     else
+#         _dirname = `dirname "$_pwd" `
+#         if [[ $_dirname == "/" ]]; then
+#             _dirname=""
+#         fi
+#         _dirname="$_dirname/`basename "$_pwd"`"
+#     fi
+    _dirname=$_pwd
+    path="${LC}${_dirname}${NIL}"
+    if [[ -n ${ZSH_VERSION-} ]]; then
+        myuser="${UC}${USER}@${HC}${FULL}${NIL}"
+    else
+        myuser="${UC}\u@${HC}${FULL}${NIL}"
+    fi
+    # Git branch / dirtiness
+    # from http://henrik.nyh.se/2008/12/git-dirty-promt#comment-8325834
+    if git update-index -q --refresh 2>/dev/null; git diff-index --quiet --cached HEAD --ignore-submodules -- 2>/dev/null && git diff-files --quiet --ignore-submodules 2>/dev/null
+        then dirty=""
+    else
+        dirty="${RED}*${NIL}"
+    fi
+    _branch=$(git symbolic-ref HEAD 2>/dev/null)
+    _branch=${_branch#refs/heads/}  #apparently faster than sed
+    branch=""  #need this to clear it when we leave a repo
+    if [[ -n $_branch ]]; then
+        branch=" ${NIL}[${BC}${_branch}${dirty}${NIL}]"
+    fi
+    # Dollar/pound sign
+    end="${LC}\$${NIL} "
+    # Virtual env
+    if [[ $VIRTUAL_ENV != "" ]]
+    then
+        venv="${VC}(${VIRTUAL_ENV##*/}) "
+    else
+        venv=""
+    fi
+    export PS1="${venv}${myuser}${path}${branch}${end}"
+}
+
+export PROMPT_COMMAND=set_prompt
+

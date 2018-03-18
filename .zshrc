@@ -13,6 +13,9 @@ zstyle :compinstall filename '/home/matt/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+# autoload -Uz promptinit
+# promptinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -22,3 +25,10 @@ setopt appendhistory nomatch notify
 unsetopt autocd beep extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+[[ -e ~/.bash_git_prompt ]] && emulate sh -c ' source ~/.git_prompt.sh'
+precmd() { eval "$PROMPT_COMMAND" }
+# precmd () { __git_ps1 '[%n@%m %c$(__git_ps1 " (%s)")]\$'}
+# precmd () { __git_ps1 "%n" ":%~$ " "|%s" }
+# setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+# export PS1="${myuser}${path}${venv}\n${branch}${end}"

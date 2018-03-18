@@ -3,10 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- != *i* ]] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -25,7 +22,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -86,9 +83,6 @@ fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # some more ls aliases
 alias ls='ls --color=auto'
