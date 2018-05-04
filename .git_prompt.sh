@@ -36,11 +36,11 @@ fi
 # BC: git branch name color
 # HD: hostname display (full or short)
 # Defaults
-UC=$GREEN
-HC=$YELLOW
+UC=$YELLOW
+HC=$PURPLE
 LC=$CYAN
 VC=$BLUE
-BC=$PURPLE
+BC=$YELLOW
 HD=$FULL
 
 # Prompt function (using PROMPT_COMMAND (?))

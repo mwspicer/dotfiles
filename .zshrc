@@ -26,7 +26,8 @@ unsetopt autocd beep extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-[[ -e ~/.bash_git_prompt ]] && emulate sh -c ' source ~/.git_prompt.sh'
+[[ -e ~/.git_prompt.sh ]] && emulate sh -c ' source ~/.git_prompt.sh'
+[[ -e ~/.aliases ]] && emulate sh -c ' source ~/.aliases'
 precmd() { eval "$PROMPT_COMMAND" }
 # precmd () { __git_ps1 '[%n@%m %c$(__git_ps1 " (%s)")]\$'}
 # precmd () { __git_ps1 "%n" ":%~$ " "|%s" }
@@ -62,6 +63,8 @@ alias l='ls -CF'
 if [[ `ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)` == 'termite' ]]; then
     source /etc/profile.d/vte.sh 
 fi
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 ## Set Synaptics touchpad options
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
