@@ -1,0 +1,5 @@
+[user]
+	email = mattspicer27@gmail.com
+	name = Matt Spicer
+[core]
+	editor = nvim

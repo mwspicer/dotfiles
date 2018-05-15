@@ -1,0 +1,3 @@
+alias yolo='sudo pacman -Syu --noconfirm'
+
+export PATH="$HOME/.cargo/bin:$PATH"
