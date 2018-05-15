@@ -1,2 +1,1 @@
-# dotfiles
-manual repository for important dotfiles
+The easiest way to use this repository is with GNU stow. Dotfiles for individual programs are stored in diretories named after the program. The dotfiles for a program can be "installed" using the command `stow <directory>`, where `<directory>` is the directory to install files from. For example, to import the bash configuration, use `stow bash`. Additionally, the `stow_all.sh` script may be used to stow all the directories in this repository (or you can comment out the lines corresponding to directories you don't want to install for a customized installation).
