@@ -1,1 +1,67 @@
-.config/Code/User/settings.json
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Monokai",
+    "python.pythonPath": "python3",
+
+    "[latex]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "[plaintext]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "[markdown]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "[biblatex]":
+    {
+        "editor.wordWrap": "on"
+    },
+    "files.associations":
+    {
+        "*.mmd": "latex",
+        "*.m": "matlab"
+    },
+    "window.zoomLevel": 1,
+    "cSpell.language": "en,en-US",
+    "cSpell.userWords":
+    [
+        "Autoregressive",
+        "Bayesian",
+        "covariance",
+        "microcontrollers",
+        "approximators",
+        "autocovariance",
+        "nonconstant",
+        "orthonormal",
+        "overfits",
+        "overfitting",
+        "perceptron"
+    ],
+    "cSpell.ignoreRegExpList":
+    [
+        "\\\\\\w*(\\[.*?\\])?(\\{.*?\\})?",
+        "\\$.+?\\$"
+    ],
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "latexmk",
+            "args": [
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        }
+    ],
+    "git.confirmSync": false,
+    "matlab.mlintpath": "/usr/local/MATLAB/R2017a/bin/glnxa64/mlint",
+    "workbench.panel.location": "bottom",
+    "graphviz-preview.dotPath": "/usr/bin/dot",
+    "workbench.startupEditor": "welcomePage"
+}

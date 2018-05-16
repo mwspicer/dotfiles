@@ -5,6 +5,7 @@ colorscheme desert
 
 if has('nvim')
     " Neovim specific commands
+    tnoremap <Esc><Esc> <C-\><C-n> 
 else
     " Standard vim specific commands
 endif
