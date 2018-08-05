@@ -28,6 +28,7 @@ bindkey -v
 
 [[ -e ~/.git_prompt.sh ]] && emulate sh -c ' source ~/.git_prompt.sh'
 [[ -e ~/.aliases ]] && emulate sh -c ' source ~/.aliases'
+[[ -e ~/.shenv ]] && emulate sh -c ' source ~/.shenv'
 precmd() { eval "$PROMPT_COMMAND" }
 # precmd () { __git_ps1 '[%n@%m %c$(__git_ps1 " (%s)")]\$'}
 # precmd () { __git_ps1 "%n" ":%~$ " "|%s" }

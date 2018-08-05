@@ -21,10 +21,4 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 ## Set Synaptics touchpad options
 export synclient TapButton1=1 TapButton2=3 TapButton3=2
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk-amd64
-# PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
-# export JRE_HOME
-# export PATH
 
-export PATH="$HOME/.cargo/bin:$PATH"

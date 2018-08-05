@@ -103,6 +103,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+if [ -f ~/.shenv ]; then
+    . ~/.shenv
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -115,6 +121,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## Set Synaptics touchpad options
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk-amd64/jre
