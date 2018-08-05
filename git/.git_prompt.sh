@@ -61,7 +61,7 @@ function set_prompt()
 #         _dirname="$_dirname/`basename "$_pwd"`"
 #     fi
     _dirname=$_pwd
-    path="${LC}${_dirname}${NIL}"
+    cur_path="${LC}${_dirname}${NIL}"
     if [[ -n ${ZSH_VERSION-} ]]; then
         myuser="${UC}${USER}@${HC}${FULL}${NIL}"
     else
@@ -89,7 +89,7 @@ function set_prompt()
     else
         venv=""
     fi
-    export PS1="${venv}${myuser}${path}${branch}${end}"
+    export PS1="${venv}${myuser}${cur_path}${branch}${end}"
 }
 
 export PROMPT_COMMAND=set_prompt
