@@ -219,7 +219,7 @@ client.urgent               $urgent-bg-color        $urgent-bg-color        $tex
 # finds out, if available)
 bar
 {
-        status_command i3blocks -c /home/matt/.config/i3/i3blocks.conf #i3status
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf #i3status
         position top
         font pango: DejaVu Sans Mono 11
         colors
@@ -236,13 +236,20 @@ bar
 
 font pango: DejaVu Sans Mono 11
 
-bindsym $mod+Shift+x exec i3lock #/home/matt/.config/i3/i3lock.sh
+#bindsym $mod+Shift+x exec i3lock #$HOME/.config/i3/i3lock.sh
+# lock command
+# Update image with betterlockscreen -u /path/to/image --blur=<factor>
+bindsym $mod+x exec betterlockscreen --lock
+bindsym $mod+Shift+x exec betterlockscreen -s
 
 # Pulse Audio controls
 exec --no-startup-id pulseaudio
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 2%- unmute
-bindsym XF86AudioMute exec amixer -D pulse -q sset Master toggle
+#bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2%+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q sset Master 2%- unmute
+#bindsym XF86AudioMute exec amixer -D pulse -q sset Master toggle
+bindsym XF86AudioRaiseVolume exec pamixer -i 2 -u
+bindsym XF86AudioLowerVolume exec pamixer -d 2
+bindsym XF86AudioMute exec pamixer --toggle-mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -265,19 +272,22 @@ exec --no-startup-id caffeine
 bindsym Print exec gnome-screenshot -i #scrot -b -d 1 '%Y:%m:%d:%H:%M:%S.png'  -e 'mv $f ~/Pictures/'
 
 # Run rofi (application launcher)
-bindsym $mod+d exec rofi -theme purple  -show run -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -theme Arc-Dark -show run -lines 5 -eh 2 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
 
 # Connect/disconnect external monitor
-exec_always xrandr | grep 'HDMI1 connected' && xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1
-exec_always xrandr | grep 'HDMI1 disconnected' && xrandr --output eDP1 --output HDMI1 --off
-#exec ~/.config/i3/connect_hdmi.sh
-#xrandr --output HDMI1 --right-of eDP1 --mode 1680x1050
+exec_always $HOME/.config/i3/scripts/monitor_check.sh
+# exec_always xrandr | grep 'HDMI1 connected' && xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1
+# exec_always xrandr | grep 'HDMI1 disconnected' && xrandr --output eDP1 --output HDMI1 --off
 #pactl set-card-profile 0 output:hdmi-stereo
 #pactl set-card-profile 0 output:analog-stereo
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
+# Notifications
+exec dunst
+
 # Appearance mods
 # exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id compton --config ~/.config/compton.conf #-f -i 0.8 --inactive-opacity-override
-exec_always --no-startup-id feh --bg-scale ~/Pictures/forest_pond_wallhaven.png
+exec --no-startup-id compton --config $HOME/.config/compton.conf
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/white-dress-forest.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/bear_mountain_state_park.png
