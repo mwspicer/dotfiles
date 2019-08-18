@@ -1,6 +1,2 @@
 PATH=$PATH:/$HOME/.local/bin
-export PATH="$HOME/.cargo/bin:$PATH"
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-#export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk-amd64
-export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk-amd64/jre
