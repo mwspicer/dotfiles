@@ -3,3 +3,13 @@
 	name = Matt Spicer
 [core]
 	editor = nvim
+
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+
+[alias]
+    lg = log --graph --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
