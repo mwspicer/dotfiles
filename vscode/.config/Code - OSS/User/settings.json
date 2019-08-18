@@ -1,7 +1,7 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "One Monokai",
     "python.pythonPath": "python3",
 
     "[latex]":
@@ -63,5 +63,6 @@
     "matlab.mlintpath": "/usr/local/MATLAB/R2017a/bin/glnxa64/mlint",
     "workbench.panel.location": "bottom",
     "graphviz-preview.dotPath": "/usr/bin/dot",
-    "workbench.startupEditor": "welcomePage"
+    "workbench.startupEditor": "welcomePage",
+    "C_Cpp.updateChannel": "Insiders"
 }
