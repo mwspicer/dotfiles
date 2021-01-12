@@ -1,8 +1,9 @@
 [user]
-	email = mattspicer27@gmail.com
-	name = Matt Spicer
+    email = mattspicer27@gmail.com
+    name = Matt Spicer
+
 [core]
-	editor = nvim
+    editor = nvim
 
 [color]
     ui = auto
@@ -13,3 +14,6 @@
 
 [alias]
     lg = log --graph --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[pull]
+    rebase = true
