@@ -10,6 +10,7 @@ stow shell
 stow spotifork
 stow sublime_text3
 stow termite
+stow urxvt
 stow vim
 stow vscode
 stow zsh
