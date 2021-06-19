@@ -45,4 +45,4 @@ my $night = "";
 binmode(STDOUT, ":utf8");
 print "$night";
 }
-print"$values[1]"; }'
+print"$values[1]\n"; }'
