@@ -1,3 +1,6 @@
 [submodule "termite/.config/termite/base16-termite"]
 	path = termite/.config/termite/base16-termite
 	url = https://github.com/khamer/base16-termite.git
+[submodule "vim/base16-vim"]
+	path = vim/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
