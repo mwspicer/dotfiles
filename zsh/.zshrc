@@ -11,6 +11,9 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/matt/.zshrc'
 
+# Default prompt
+PS1='[\u@\h \W]\$ '
+
 autoload -Uz compinit
 compinit
 
@@ -23,31 +26,26 @@ HISTSIZE=1000
 SAVEHIST=2000
 setopt appendhistory nomatch notify
 unsetopt autocd beep extendedglob
+# sets up vi keybindings
 bindkey -v
+# set up backward search for Ctrl+r
+bindkey '^R' history-incremental-pattern-search-backward
 # End of lines configured by zsh-newuser-install
 
 [[ -e ~/.git_prompt.sh ]] && emulate sh -c ' source ~/.git_prompt.sh'
 [[ -e ~/.aliases ]] && emulate sh -c ' source ~/.aliases'
 [[ -e ~/.shenv ]] && emulate sh -c ' source ~/.shenv'
 precmd() { eval "$PROMPT_COMMAND" }
-# precmd () { __git_ps1 '[%n@%m %c$(__git_ps1 " (%s)")]\$'}
-# precmd () { __git_ps1 "%n" ":%~$ " "|%s" }
-# setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
-# export PS1="${myuser}${path}${venv}\n${branch}${end}"
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# some more ls aliases
-PS1='[\u@\h \W]\$ '
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er>'
 
 if [[ `ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)` == 'termite' ]]; then
     source /etc/profile.d/vte.sh 
 fi
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-
