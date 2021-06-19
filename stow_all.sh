@@ -1,5 +1,6 @@
 #!/bin/sh
 # Use this script to "install" all dotfiles
+stow alacritty
 stow bash
 stow git
 stow i3
