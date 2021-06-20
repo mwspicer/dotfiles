@@ -64,5 +64,6 @@
     "workbench.panel.location": "bottom",
     "graphviz-preview.dotPath": "/usr/bin/dot",
     "workbench.startupEditor": "welcomePage",
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "latex-workshop.view.pdf.viewer": "tab"
 }
