@@ -1,7 +1,38 @@
 filetype plugin indent on
 
 syntax on
-colorscheme desert
+try
+    "colorscheme dark_plus
+    "colorscheme base16-ashes
+    "colorscheme base16-atelier-cave
+    "colorscheme base16-atelier-estuary
+    "colorscheme base16-atelier-heath
+    "colorscheme base16-atelier-savanna
+    "colorscheme base16-chalk
+    "colorscheme base16-dracula
+    "colorscheme base16-embers
+    "colorscheme base16-ia-dark
+    "colorscheme base16-material-vivid
+    "colorscheme base16-synth-midnight-dark
+    "colorscheme base16-twilight
+    colorscheme base16-woodland
+    "colorscheme base16-zenburn
+catch
+    colorscheme desert
+endtry
+function FixBackground()
+    set termguicolors
+    hi Normal  ctermbg=none guibg=none
+    hi NonText ctermbg=none guibg=none
+    set t_Co=256
+endfunction
+call FixBackground()
+" Fix background on colorscheme change
+augroup on_change_colorschema
+  autocmd!
+  "autocmd ColorScheme * call s:base16_customize()
+  autocmd ColorScheme * call FixBackground()
+augroup END
 
 if has('nvim')
     " Neovim specific commands
