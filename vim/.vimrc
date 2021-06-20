@@ -1,7 +1,11 @@
 filetype plugin indent on
 
 syntax on
+" cuda syntax highlighting for .cuh files
+au BufNewFile,BufRead *.cuh setf cuda
+
 try
+    "colorscheme angr
     "colorscheme dark_plus
     "colorscheme base16-ashes
     "colorscheme base16-atelier-cave
@@ -29,14 +33,17 @@ endfunction
 call FixBackground()
 " Fix background on colorscheme change
 augroup on_change_colorschema
-  autocmd!
-  "autocmd ColorScheme * call s:base16_customize()
-  autocmd ColorScheme * call FixBackground()
+    autocmd!
+    "autocmd ColorScheme * call s:base16_customize()
+    autocmd ColorScheme * call FixBackground()
 augroup END
 
 if has('nvim')
     " Neovim specific commands
-    tnoremap <Esc><Esc> <C-\><C-n> 
+    "tnoremap <Esc><Esc> <C-\><C-n>
+    tnoremap <C-n> <C-\><C-n>
+    nnoremap <C-t> :sp<cr>:wincmd j<cr>:term<cr><C-w>20-<cr>
+    au TermOpen * setlocal nonumber norelativenumber
 else
     " Standard vim specific commands
 endif
@@ -61,23 +68,30 @@ ca three call ThreeSpaces()
 set autoindent
 set smartindent " Enable smart-indent
 set smarttab    " Enable smart-tabs
-set cindent
+set cindent     " Use 'C' style program indenting
 
 set wildmenu
 
 set ruler   " Show row and column ruler information
 
 "set confirm    " Prompt confirmation dialogs
+
 "set showtabline=2  " Show tab bar
 "set cmdheight=2    " Command line height
+
 "set spell   " Enable spell-checking
+
 "set virtualedit=all    " Enable free-range cursor
 "set undolevels=1000 " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
+
+" Line break/wrapping
 set showbreak=+++   " Wrap-broken line prefix
 set linebreak       " Break lines at word (requires Wrap lines)
 "set textwidth=100   " Line wrap (number of cols)
-set showmatch       " Highlight matching brace
+
+" Search settings
+set showmatch   " Highlight matching brace
 set hlsearch    " Highlight all search results
 "set smartcase   " Enable smart-case search
 "set ignorecase  " Always case-insensitive
@@ -86,10 +100,10 @@ set hlsearch    " Highlight all search results
 " fix pasting from clipboard
 :set pastetoggle=<f5>
 
-"display line numbers
+" Display line numbers
 set number
 
-" autowrite files
+" Autowrite a modified file any time comands are used to switch to another file, etc
 set autowriteall
 
 set updatetime=1000
@@ -99,9 +113,16 @@ augroup AutoWrite
     autocmd! BufLeave * :update
 augroup END
 
+" save with sudo permissions
+cnoremap w!! execute 'silent! write !sudo tee % > /dev/null' <bar> edit
+
 " switching between splits
-nnoremap <A-Down> <C-W><C-J>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
 nnoremap <A-Up> <C-W><C-K>
+nnoremap <A-Down> <C-W><C-J>
 nnoremap <A-Right> <C-W><C-L>
 nnoremap <A-Left> <C-W><C-H>
 " switching between buffers
@@ -109,7 +130,6 @@ nnoremap gb :ls<CR>:b<Space>
 set hidden
 
 map <C-c> "+y<CR>
-
 
 " get rid of warnings when trying to move past first/last line
 set belloff=all
