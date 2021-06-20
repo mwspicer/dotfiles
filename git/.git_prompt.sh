@@ -1,13 +1,21 @@
 # Everyone needs a little color in their lives
 if [[ -n ${ZSH_VERSION-} ]]; then
-    RED='%F{red}'
-    GREEN='%F{green}'
-    YELLOW='%F{228}'
-    BLUE='%F{blue}'
+    #RED='%F{red}'
+    #GREEN='%F{green}'
+    #YELLOW='%F{228}'
+    #BLUE='%F{blue}'
     ORANGE='%F{202}'
     PURPLE='%F{104}'
-    CYAN='%F{51}'
-    WHITE='%F{15}'
+    #CYAN='%F{51}'
+    #WHITE='%F{15}'
+    BLACK='%F{#9d8b70}'
+    RED='%F{#d35c5c}'
+    GREEN='%F{#b7ba53}'
+    YELLOW='%F{#e0ac16}'
+    BLUE='%F{#88a4d3}'
+    MAGENTA='%F{#bb90e2}'
+    CYAN='%F{#6eb958}'
+    WHITE='%F{#e4d4c8}'
     NIL='%f'
 
     # Host name styles
@@ -37,9 +45,9 @@ fi
 # HD: hostname display (full or short)
 # Defaults
 UC=$YELLOW
-HC=$PURPLE
+HC=$BLUE
 LC=$CYAN
-VC=$BLUE
+VC=$PURPLE
 BC=$YELLOW
 HD=$FULL
 
