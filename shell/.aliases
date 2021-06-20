@@ -3,7 +3,8 @@ yolo() {
   local danger=$(arch_news_check)
   if [ "$danger" = "no" ]; then
     echo "no news"
-    sudo pacman -Syu --noconfirm
+    #sudo pacman -Syu --noconfirm
+    yay -Syu
   fi
 }
 arch_news_check() {
@@ -12,7 +13,7 @@ arch_news_check() {
   if [ "$archNews" != "$(cat ~/.cache/pac-news)" ]; then
     echo "********** ARCH NEWS! MANUAL INTERVENTION NEEDED! **********";
     echo "$archNews"
-    firefox 'https://www.archlinux.org/'
+    waterfox-g3 'https://www.archlinux.org/'
     read -r
     echo "$archNews" > ~/.cache/pac-news
     echo "yes"
@@ -20,11 +21,20 @@ arch_news_check() {
     echo "no"
   fi
 }
+idleon() {
+    swayidle \
+        timeout 300 'swaylock -f' \
+        timeout 600 'swaymsg "output * dpms off"' \
+             resume 'swaymsg "output * dpms on"' \
+        before-sleep 'swaylock -f'
+}
+alias idleoff='killall swayidle'
 
 alias vim='nvim'
-alias vi='vim'
-alias workvpn='nordvpn disconnect && \
+alias vi='nvim'
+alias workvpn='nordvpn disconnect && sudo cp ${HOME}/resolv.conf /etc/ && \
                sudo netExtender -d BRE -u matthew.spicer www.br-envision.com:4433'
+alias workrdp='xfreerdp /v:breusers /u:matthew.spicer /dynamic-resolution'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
