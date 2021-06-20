@@ -41,17 +41,47 @@ else
     " Standard vim specific commands
 endif
 
-" show existing tab with 4 spaces width
-set tabstop=4
-
-" indent with 4 spaces
-set shiftwidth=4
 " change tabs to spaces
 set expandtab
+" show existing tab with 4 spaces width
+set tabstop=4
+" allow backspace to erase up to 4 spaces
+set softtabstop=4
+" indent with 4 spaces
+set shiftwidth=4
+function ThreeSpaces()
+    set tabstop=3
+    set softtabstop=3
+    set shiftwidth=3
+endfunction
+"command! Three call s:ThreeSpaces()
+ca three call ThreeSpaces()
 
 " set auto indenting
 set autoindent
+set smartindent " Enable smart-indent
+set smarttab    " Enable smart-tabs
 set cindent
+
+set wildmenu
+
+set ruler   " Show row and column ruler information
+
+"set confirm    " Prompt confirmation dialogs
+"set showtabline=2  " Show tab bar
+"set cmdheight=2    " Command line height
+"set spell   " Enable spell-checking
+"set virtualedit=all    " Enable free-range cursor
+"set undolevels=1000 " Number of undo levels
+set backspace=indent,eol,start  " Backspace behaviour
+set showbreak=+++   " Wrap-broken line prefix
+set linebreak       " Break lines at word (requires Wrap lines)
+"set textwidth=100   " Line wrap (number of cols)
+set showmatch       " Highlight matching brace
+set hlsearch    " Highlight all search results
+"set smartcase   " Enable smart-case search
+"set ignorecase  " Always case-insensitive
+"set incsearch   " Searches for strings incrementally
 
 " fix pasting from clipboard
 :set pastetoggle=<f5>
@@ -80,18 +110,6 @@ set hidden
 
 map <C-c> "+y<CR>
 
-" Commenting blocks of code
-" comment with ,cc; uncomment with ,cu
-augroup comment
-    autocmd!
-    autocmd FileType c,cpp,java,scala             let b:commentleader='// '
-    autocmd FileType sh,ruby,python,conf,fstab    let b:commentleader='# '
-    autocmd FileType tex                          let b:commentleader='% '
-    autocmd FileType mail                         let b:commentleader='> '
-    autocmd FileType vim                         let b:commentleader='" '
-augroup END
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:commentleader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:commentleader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " get rid of warnings when trying to move past first/last line
 set belloff=all
