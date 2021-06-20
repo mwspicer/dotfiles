@@ -1,5 +1,5 @@
 # Everyone needs a little color in their lives
-if [[ -n ${ZSH_VERSION-} ]]; then
+if [[ -n ${ZSH_VERSION} ]]; then
     #RED='%F{red}'
     #GREEN='%F{green}'
     #YELLOW='%F{228}'
@@ -69,11 +69,11 @@ function set_prompt()
 #         _dirname="$_dirname/`basename "$_pwd"`"
 #     fi
     _dirname=$_pwd
-    cur_path="${LC}${_dirname}${NIL}"
-    if [[ -n ${ZSH_VERSION-} ]]; then
-        myuser="${UC}${USER}@${HC}${FULL}${NIL}"
+    cur_path="${LC}${_dirname}${NIL} "
+    if [[ -n ${ZSH_VERSION} ]]; then
+        myuser="${UC}${USER}@${HC}${FULL}${NIL} "
     else
-        myuser="${UC}\u@${HC}${FULL}${NIL}"
+        myuser="${UC}\u@${HC}${FULL}${NIL} "
     fi
     # Git branch / dirtiness
     # from http://henrik.nyh.se/2008/12/git-dirty-promt#comment-8325834
@@ -86,7 +86,7 @@ function set_prompt()
     _branch=${_branch#refs/heads/}  #apparently faster than sed
     branch=""  #need this to clear it when we leave a repo
     if [[ -n $_branch ]]; then
-        branch=" ${NIL}[${BC}${_branch}${dirty}${NIL}]"
+        branch="${NIL}[${BC}${_branch}${dirty}${NIL}]"
     fi
     # Dollar/pound sign
     end="${LC}\$${NIL} "
