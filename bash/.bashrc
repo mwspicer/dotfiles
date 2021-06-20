@@ -5,6 +5,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -103,3 +111,8 @@ fi
 if [ -f ~/.git_prompt.sh ]; then
     . ~/.git_prompt.sh
 fi
+if [ -f ~/.$HOST.sh ]; then
+    . ~/.$HOST.sh
+fi
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
