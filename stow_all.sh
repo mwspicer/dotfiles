@@ -7,6 +7,7 @@ stow i3
 stow i3lock
 stow i3lock-fancier
 stow matplotlib
+stow rofi
 stow shell
 stow spotifork
 stow sublime_text3
