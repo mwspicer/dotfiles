@@ -7,3 +7,9 @@
 [submodule "vim/.vim/pack/veritas/start/pony-vim-syntax"]
 	path = vim/.vim/pack/veritas/start/pony-vim-syntax
 	url = https://github.com/dleonard0/pony-vim-syntax.git
+[submodule "shell/base16-shell"]
+	path = shell/.config/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
+[submodule "shell/.config/base16-shell"]
+	path = shell/.config/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git

@@ -5,22 +5,28 @@ syntax on
 au BufNewFile,BufRead *.cuh setf cuda
 
 try
-    "colorscheme angr
-    "colorscheme dark_plus
-    "colorscheme base16-ashes
-    "colorscheme base16-atelier-cave
-    "colorscheme base16-atelier-estuary
-    "colorscheme base16-atelier-heath
-    "colorscheme base16-atelier-savanna
-    "colorscheme base16-chalk
-    "colorscheme base16-dracula
-    "colorscheme base16-embers
-    "colorscheme base16-ia-dark
-    "colorscheme base16-material-vivid
-    "colorscheme base16-synth-midnight-dark
-    "colorscheme base16-twilight
-    colorscheme base16-woodland
-    "colorscheme base16-zenburn
+    " If using base16-shell, set colorscheme from that
+    if filereadable(expand("~/.vimrc_background"))
+        let base16colorspace=256
+        source ~/.vimrc_background
+    else
+        "colorscheme angr
+        "colorscheme dark_plus
+        "colorscheme base16-ashes
+        "colorscheme base16-atelier-cave
+        "colorscheme base16-atelier-estuary
+        "colorscheme base16-atelier-heath
+        "colorscheme base16-atelier-savanna
+        "colorscheme base16-chalk
+        "colorscheme base16-dracula
+        "colorscheme base16-embers
+        "colorscheme base16-ia-dark
+        "colorscheme base16-material-vivid
+        "colorscheme base16-synth-midnight-dark
+        "colorscheme base16-twilight
+        colorscheme base16-woodland
+        "colorscheme base16-zenburn
+    endif
 catch
     colorscheme desert
 endtry
